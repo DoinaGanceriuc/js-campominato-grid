@@ -15,6 +15,7 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 */
 
 // inizializzazione delle variabili
+const chooseLevel = prompt("Scegli il livello di difficoltà[1/2/3]")
 const levelOne = "1";
 const levelTwo = "2"; 
 const levelThree = "3";
@@ -24,7 +25,7 @@ const containerElement = document.querySelector(".container");
 
 
 //ciclo for
-for (let i = 1; i <= 100; i++) {
+/* for (let i = 1; i <= 100; i++) {
     let cellaElement = document.createElement("div");
     cellaElement.className = "cella";
     cellaElement.innerHTML = i;
@@ -33,7 +34,51 @@ for (let i = 1; i <= 100; i++) {
 
     //evento sul click
     cellaElement.addEventListener("click", function() {
-    /* console.log(this); */
+  
     this.style.backgroundColor = "lightBlue";
     })
+} */
+
+// condizione di verifica
+if (chooseLevel == levelOne) {
+
+    for (let i = 1; i <= 100; i++) {
+    let cellaElement = document.createElement("div");
+    cellaElement.className = "cella";
+    cellaElement.innerHTML = i;
+    containerElement.insertAdjacentElement("beforeend", cellaElement)
+
+   cellaElement.addEventListener("click", function() {
+    console.log(this);
+    this.style.backgroundColor = "lightBlue";
+})
+}
+
+} else if (chooseLevel == levelTwo) {
+
+    for (let i = 1; i <= 81; i++) {
+    let cellaElement = document.createElement("div");
+    cellaElement.className = "cella";
+    cellaElement.innerHTML = i;
+    containerElement.insertAdjacentElement("beforeend", cellaElement)
+
+   cellaElement.addEventListener("click", function() {
+    console.log(this);
+    this.style.backgroundColor = "lightBlue";
+})
+}
+
+} else {
+    for (let i = 1; i <= 49; i++) {
+    let cellaElement = document.createElement("div");
+    cellaElement.className = "cella";
+    cellaElement.innerHTML = i;
+    containerElement.insertAdjacentElement("beforeend", cellaElement)
+
+   cellaElement.addEventListener("click", function() {
+    console.log(this);
+    this.style.backgroundColor = "lightBlue";
+})
+}
+
 }
