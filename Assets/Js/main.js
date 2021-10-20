@@ -12,6 +12,7 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 -ciclo for
 -eventListener
 -if/else
+-function
 */
 
 // inizializzazione delle variabili
@@ -24,23 +25,32 @@ const levelThree = "3";
 const containerElement = document.querySelector(".container");
 
 
-//ciclo for
-/* for (let i = 1; i <= 100; i++) {
+
+function ciclaElementi(numCiclo) {
+
+    
+    for (let i = 1; i <= numCiclo; i++) {
+        
     let cellaElement = document.createElement("div");
     cellaElement.className = "cella";
     cellaElement.innerHTML = i;
     containerElement.insertAdjacentElement("beforeend", cellaElement)
 
-
-    //evento sul click
+ 
+ 
     cellaElement.addEventListener("click", function() {
-  
     this.style.backgroundColor = "lightBlue";
     })
-} */
+
+
+}  
+}
+
+// Invocare una funzione
+ciclaElementi("100");
 
 // condizione di verifica
-if (chooseLevel == levelOne) {
+/* if (chooseLevel == levelOne) {
 
     for (let i = 1; i <= 100; i++) {
     let cellaElement = document.createElement("div");
@@ -81,4 +91,4 @@ if (chooseLevel == levelOne) {
 })
 }
 
-}
+} */
