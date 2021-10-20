@@ -25,19 +25,20 @@ const levelThree = "3";
 const containerElement = document.querySelector(".container");
 
 
+/**
+ * Questa funzione cicla una serie di elementi in base al valore che riceve in ingresso
+ * @param {string} valCiclo - indica il valore da ricevere in input
+ */
+function ciclaElementi(valCiclo) {
 
-function ciclaElementi(numCiclo) {
-
-    
-    for (let i = 1; i <= numCiclo; i++) {
-        
+    //ciclo for
+    for (let i = 1; i <= valCiclo; i++) { 
     let cellaElement = document.createElement("div");
     cellaElement.className = "cella";
     cellaElement.innerHTML = i;
     containerElement.insertAdjacentElement("beforeend", cellaElement)
 
- 
- 
+    // evento sul click
     cellaElement.addEventListener("click", function() {
     this.style.backgroundColor = "lightBlue";
     })
@@ -47,48 +48,21 @@ function ciclaElementi(numCiclo) {
 }
 
 // Invocare una funzione
-ciclaElementi("100");
+ciclaElementi(levelPlay());
 
-// condizione di verifica
-/* if (chooseLevel == levelOne) {
-
-    for (let i = 1; i <= 100; i++) {
-    let cellaElement = document.createElement("div");
-    cellaElement.className = "cella";
-    cellaElement.innerHTML = i;
-    containerElement.insertAdjacentElement("beforeend", cellaElement)
-
-   cellaElement.addEventListener("click", function() {
-    console.log(this);
-    this.style.backgroundColor = "lightBlue";
-})
+/**
+ * Questa funzione ha lo scopo di definire qual è il livello del gioco e restiuisce una stringa diversa in base alla difficoltà del livello
+ * @returns {string} - indica il valore che resituisce se la condizione si verifica o meno
+ */
+function levelPlay() {
+    // condizione di verifica
+    if (chooseLevel == levelOne){
+        return "100"
+    } else if (chooseLevel == levelTwo) {
+        return "81"
+    } else {
+        return "49"
+    }
 }
-
-} else if (chooseLevel == levelTwo) {
-
-    for (let i = 1; i <= 81; i++) {
-    let cellaElement = document.createElement("div");
-    cellaElement.className = "cella";
-    cellaElement.innerHTML = i;
-    containerElement.insertAdjacentElement("beforeend", cellaElement)
-
-   cellaElement.addEventListener("click", function() {
-    console.log(this);
-    this.style.backgroundColor = "lightBlue";
-})
-}
-
-} else {
-    for (let i = 1; i <= 49; i++) {
-    let cellaElement = document.createElement("div");
-    cellaElement.className = "cella";
-    cellaElement.innerHTML = i;
-    containerElement.insertAdjacentElement("beforeend", cellaElement)
-
-   cellaElement.addEventListener("click", function() {
-    console.log(this);
-    this.style.backgroundColor = "lightBlue";
-})
-}
-
-} */
+// Invocare una funzione
+levelPlay();
