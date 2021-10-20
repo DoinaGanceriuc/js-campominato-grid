@@ -21,3 +21,12 @@ const levelThree = "3";
 
 // selezionare elementi DOM
 const containerElement = document.querySelector(".container");
+
+
+//ciclo for
+for (let i = 1; i <= 100; i++) {
+    let cellaElement = document.createElement("div");
+    cellaElement.className = "cella";
+    cellaElement.innerHTML = i;
+    containerElement.insertAdjacentElement("beforeend", cellaElement)
+}
