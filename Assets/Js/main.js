@@ -29,4 +29,11 @@ for (let i = 1; i <= 100; i++) {
     cellaElement.className = "cella";
     cellaElement.innerHTML = i;
     containerElement.insertAdjacentElement("beforeend", cellaElement)
+
+
+    //evento sul click
+    cellaElement.addEventListener("click", function() {
+    /* console.log(this); */
+    this.style.backgroundColor = "lightBlue";
+    })
 }
